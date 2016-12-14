@@ -1,0 +1,11 @@
+{
+    "timeout": 10,
+    "source": {
+        "directories": [
+            "Classes"
+        ]
+    },
+    "logs": {
+        "text": "humbuglog.txt"
+    }
+}

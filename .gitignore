@@ -1,0 +1,6 @@
+/composer.lock
+/.idea
+/phpunit.xml
+/vendor
+/humbuglog.txt
+

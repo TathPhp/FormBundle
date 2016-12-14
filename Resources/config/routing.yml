@@ -1,0 +1,3 @@
+#tath_form_homepage:
+#    path:     /
+#    defaults: { _controller: TathFormBundle:Default:index }

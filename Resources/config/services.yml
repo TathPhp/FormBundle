@@ -1,0 +1,5 @@
+services:
+  tath_form.populator_listener:
+    class: Tath\FormBundle\Classes\FormPopulatorListener
+    tags:
+      - { name: kernel.event_listener, event: tath.form.populate }

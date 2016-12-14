@@ -1,0 +1,6 @@
+- Form handler
+    - Through formtool
+    - Also look at through pure annotations with @FormRoute?
+- Attributes for form items
+- Example
+- README
