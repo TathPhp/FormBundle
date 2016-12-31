@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tath\Forms\Tests;
+namespace Tath\FormBundle\Tests;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
@@ -155,7 +155,7 @@ class FieldFactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(EntityType::class, $field->getType());
         $options = $field->getOptions();
         $this->assertArrayHasKey('class', $options);
-        $this->assertEquals('Tath\Form\Tests\Fixtures\FooEntity', $options['class']);
+        $this->assertEquals('Tath\FormBundle\Tests\Fixtures\FooEntity', $options['class']);
     }
 
     public function testCountry()

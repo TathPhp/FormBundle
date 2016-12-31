@@ -2,6 +2,7 @@
 namespace Tath\FormBundle\Tests\Fixtures;
 
 use Doctrine\ORM\Mapping as ORM;
+use Tath\FormBundle\Configuration\Form;
 use Tath\FormBundle\Configuration\FormAction;
 use Tath\FormBundle\Configuration\FormField;
 use Tath\FormBundle\Configuration\RoleRestriction;
@@ -9,7 +10,7 @@ use Tath\FormBundle\Configuration\RoleRestriction;
 /**
  * @ORM\Entity
  * @ORM\Table(name="form_entity")
- * @FormAction()
+ * @Form(success_redirect="bar")
  */
 class FormEntity
 {
@@ -89,7 +90,7 @@ class FormEntity
     private $choiceRadio;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Tath\Form\Tests\Fixtures\FooEntity")
+     * @ORM\ManyToOne(targetEntity="Tath\FormBundle\Tests\Fixtures\FooEntity")
      * @ORM\JoinColumn()
      * @FormField()
      */

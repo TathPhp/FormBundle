@@ -1,11 +1,13 @@
 <?php
-namespace Tath\Form\Tests\Fixtures;
+namespace Tath\FormBundle\Tests\Fixtures;
 
 use Doctrine\ORM\Mapping as ORM;
+use Tath\FormBundle\Configuration\Form;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="foo_entity")
+ * @Form(template="foo.html.twig")
  */
 class FooEntity
 {

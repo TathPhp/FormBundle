@@ -1,3 +1,7 @@
 #tath_form_homepage:
 #    path:     /
 #    defaults: { _controller: TathFormBundle:Default:index }
+
+tath_forms:
+  resource: '@AppBundle/Entity'
+  type: tath_form

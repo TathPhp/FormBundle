@@ -4,7 +4,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Tath\\Form\\": "./"
+            "Tath\\FormBundle\\": "./"
         }
     },
     "license": "Apache-2.0",

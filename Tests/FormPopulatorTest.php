@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Tath\FormBundle\Classes\FormPopulatorListener;
 use Tath\FormBundle\Events\PopulateEvent;
+use Tath\FormBundle\Tests\Fixtures\FooEntity;
 use Tath\FormBundle\Tests\Fixtures\FormEntity;
 use Tath\FormBundle\Classes\FormPopulator;
 use Symfony\Component\Form\Test\TypeTestCase;
@@ -89,6 +90,17 @@ class FormPopulatorTest extends TypeTestCase
             ->populate()
             ->getBuilder()
             ;
+    }
+
+    public function testDefaultSaveButton()
+    {
+        $builder = $this->factory->createBuilder();
+        $builder->setData(new FooEntity());
+        FormPopulator::make($builder, $this->dispatcher)
+            ->populate()
+            ->getBuilder()
+        ;
+        $this->assertTrue($builder->has('Save'));
     }
 
     public function populateEventListener(PopulateEvent $populateEvent)

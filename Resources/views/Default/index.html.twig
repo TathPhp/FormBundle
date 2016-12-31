@@ -1,1 +1,31 @@
-Hello World!
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TATH Default Form Template</title>
+</head>
+<body>
+<p>
+    Edit your confiy.yml to configure your app's default form template:
+</p>
+<pre>
+tath_form:
+  template: "AppBundle::form.html.twig
+</pre>
+<p>
+    You can also use custom forms for a specific entity by using the
+    template attribute of the Form annotation:
+</p>
+<pre>
+/**
+ * @Form(template="AppBundle:Foo:bar.html.twig")
+ */
+</pre>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+</body>
+</html>

@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Tath\Core\Classes\AnnotationTool;
 use Tath\Core\Classes\Collection;
+use Tath\FormBundle\Configuration\Form;
 use Tath\FormBundle\Configuration\FormAction;
 use Tath\FormBundle\Configuration\FormField;
 use Tath\FormBundle\Events\PopulateEvent;
@@ -91,10 +92,13 @@ final class FormPopulator implements FormPopulatorInterface
             ->each(function (Field $field) use ($builder) {
                 $builder->add($field->getPropertyName(), $field->getType(), $field->getOptions());
             });
-        Collection::make($tool->getClassAnnotationsOfType(FormAction::class))
+        if (Collection::make($tool->getClassAnnotationsOfType(FormAction::class))
             ->each(function (FormAction $action) use ($builder) {
                 $builder->add($action->label, SubmitType::class, ['label' => $action->label]);
-            });
+            })
+            ->count() === 0) {
+            $builder->add('Save', SubmitType::class, ['label' => 'Save']);
+        }
     }
 
     private function isFieldVisible(Field $field, FormField $annotation): bool

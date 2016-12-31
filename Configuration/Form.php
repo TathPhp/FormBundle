@@ -1,4 +1,5 @@
 <?php
+
 namespace Tath\FormBundle\Configuration;
 
 use Doctrine\ORM\Mapping\Annotation;
@@ -7,8 +8,8 @@ use Doctrine\ORM\Mapping\Annotation;
  * @Annotation
  * @Target("CLASS")
  */
-final class FormAction implements Annotation
+class Form implements Annotation
 {
-    public $label = 'Save';
+    public $template;
     public $success_redirect;
 }

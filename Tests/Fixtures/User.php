@@ -1,5 +1,5 @@
 <?php
-namespace Tath\Form\Tests\Fixtures;
+namespace Tath\FormBundle\Tests\Fixtures;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 

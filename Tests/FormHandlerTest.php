@@ -5,12 +5,12 @@ namespace Tath\FormBundle\Tests;
 
 use Symfony\Component\Form\Test\TypeTestCase;
 use Symfony\Component\HttpFoundation\Request;
-use Tath\Form\Tests\Fixtures\FooEntity;
 use Tath\FormBundle\Classes\FormPopulator;
 use Tath\FormBundle\Events\PopulateEvent;
 use Tath\FormBundle\Services\FormHandlerFactory;
 use Tath\FormBundle\Services\FormPopulatorFactory;
 use Tath\FormBundle\Services\FormPopulatorFactoryInterface;
+use Tath\FormBundle\Tests\Fixtures\FooEntity;
 
 class FormHandlerTest extends TypeTestCase
 {

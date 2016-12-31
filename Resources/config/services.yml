@@ -1,5 +1,13 @@
 services:
+  tath_form_twig_extension:
+    class: Tath\FormBundle\Twig\FormExtension
+    arguments: ["@router", "@tath_entity_naming"]
+    tags:
+      - { name: twig.extension }
   tath_form.populator_listener:
     class: Tath\FormBundle\Classes\FormPopulatorListener
     tags:
       - { name: kernel.event_listener, event: tath.form.populate }
+  tath_entity_naming:
+    class: Tath\FormBundle\Classes\EntityNaming
+    arguments: ["@doctrine.orm.default_entity_manager"]
