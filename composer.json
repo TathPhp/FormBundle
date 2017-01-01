@@ -16,7 +16,9 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "tightenco/collect": "^5.3"
+        "symfony/symfony": "3.*",
+        "tightenco/collect": "^5.3",
+        "tath/core": "master@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.6"
