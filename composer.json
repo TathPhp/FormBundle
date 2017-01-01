@@ -1,6 +1,6 @@
 {
-    "name": "tath/form",
-    "description": "Tath form library",
+    "name": "tath/form_bundle",
+    "description": "Tath Form Bundle for Symfony",
     "type": "library",
     "autoload": {
         "psr-4": {
@@ -17,7 +17,6 @@
     "require": {
         "php": ">=7.0.0",
         "symfony/symfony": "3.*",
-        "tightenco/collect": "^5.3",
         "tath/core": "master@dev"
     },
     "require-dev": {
