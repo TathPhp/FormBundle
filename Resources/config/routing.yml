@@ -1,7 +1,16 @@
-#tath_form_homepage:
-#    path:     /
-#    defaults: { _controller: TathFormBundle:Default:index }
-
-tath_forms:
-  resource: '@AppBundle/Entity'
-  type: tath_form
+tath_form_new:
+  path: /{name}
+  defaults: { _controller: TathFormBundle:Form:form }
+tath_form_edit:
+  path: /{name}/{id}
+  defaults: { _controller: TathFormBundle:Form:form }
+tath_form_extra:
+  path: /{name}/{id}/{extra}
+  requirements:
+    extra: ".+"
+  defaults: { _controller: TathFormBundle:Form:form }
+tath_form_new_extra:
+  path: /{name}//{extra}
+  requirements:
+    extra: ".+"
+  defaults: { _controller: TathFormBundle:Form:form }
