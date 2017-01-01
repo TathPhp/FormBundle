@@ -13,9 +13,52 @@ Installation
 ------------
 Since this is pre-release software I am not yet tagging version IDs. I will start
 using semver tags when the Grid tool is released and both are solid enough to use
-at least experimentally. For now, install with:
+at least experimentally. The Form Tool requires the tath/core library, so you will
+either need to install it first, or set your minimum stability to dev. The easiest
+way to install is with:
 
+    composer require tath/core:master@dev
     composer require tath/form_bundle:master@dev
+
+Then add it to your app/AppKernel.php:
+
+    public function registerBundles()
+    {
+        $bundles = [
+            // ...
+            new Tath\FormBundle\TathFormBundle(),
+        ];
+        // ...
+    }
+
+The Form Bundle routes need to be imported into your application's routing by adding
+the following to your app/config/routing.yml:
+
+    tath_bundle:
+      resource: "@TathFormBundle/Resources/config/routing.yml"
+      prefix: /form
+
+Of course you may prefix the Form Bundle routes with whatever you like instead of /form.
+
+You need to create at least one template for your forms. Often you can begin with one
+default template, and then create customized versions if needed.
+ 
+Lets say you've got a src/AppBundle/Resources/views/template.html.twig which contains a
+body block, and that you've created a template in 
+src/AppBundle/Resources/views/form.html.twig that looks something like this:
+
+    {% extends "AppBundle::template.html.twig" %}
+    
+    {% block body %}
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    {% endblock %}
+
+You would add the following to your app/config/config.yml to make this the default
+template:
+
+
 
 Usage
 -----
